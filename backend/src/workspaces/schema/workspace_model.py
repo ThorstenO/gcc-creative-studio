@@ -1,3 +1,10 @@
+
+^x
+members: List[WorkspaceMember] = Field(default_factory=list)
+
+    @property
+    def member_ids(self) -> List[int]:
+        return [m.user_id for m in self.members]
 # Copyright 2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -125,6 +132,12 @@ class WorkspaceModel(BaseDocument):
     owner_id: int = Field(
         description="The user_id of the person who created this workspace."
     )
+
+    members: List[WorkspaceMember] = Field(default_factory=list)
+
+    @property
+    def member_ids(self) -> List[int]:
+        return [m.user_id for m in self.members]
 
     scope: WorkspaceScopeEnum = Field(
         default=WorkspaceScopeEnum.PRIVATE,
