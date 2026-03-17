@@ -1,4 +1,8 @@
+members: List[WorkspaceMember] = Field(default_factory=list)
 
+    @property
+    def member_ids(self) -> List[int]:
+        return [m.user_id for m in self.members]
 ^x
 members: List[WorkspaceMember] = Field(default_factory=list)
 
