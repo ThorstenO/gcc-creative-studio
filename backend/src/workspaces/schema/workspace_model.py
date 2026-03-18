@@ -1,14 +1,3 @@
-members: List[WorkspaceMember] = Field(default_factory=list)
-
-    @property
-    def member_ids(self) -> List[int]:
-        return [m.user_id for m in self.members]
-^x
-members: List[WorkspaceMember] = Field(default_factory=list)
-
-    @property
-    def member_ids(self) -> List[int]:
-        return [m.user_id for m in self.members]
 # Copyright 2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
